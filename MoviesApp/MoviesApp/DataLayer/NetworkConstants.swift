@@ -24,6 +24,8 @@ struct NetworkConstants{
     
     struct path {
         static let playedMovies = "now_playing"
+        static let popularMovies = "popular"
+        static let topRatedMovies = "top_rated"
     }
     
 }

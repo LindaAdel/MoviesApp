@@ -16,5 +16,13 @@ class MoviesAPI: BaseAPI, MoviesRemoteDataSource {
         return request(request: MoviesRouter.getMoviesList(page: page), responseType: MoviesResponse.self, showDefaultAlertError: true)
     }
     
+    func getPopularMoviesList(page: Int) -> AnyPublisher<MoviesResponse, APIError> {
+        return request(request: MoviesRouter.getPopularMoviesList(page: page), responseType: MoviesResponse.self, showDefaultAlertError: true)
+    }
+    
+    func getTopRatedMoviesList(page: Int) -> AnyPublisher<MoviesResponse, APIError> {
+        return request(request: MoviesRouter.getTopRatedMoviesList(page: page), responseType: MoviesResponse.self, showDefaultAlertError: true)
+    }
+    
     
 }

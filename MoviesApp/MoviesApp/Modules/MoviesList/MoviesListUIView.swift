@@ -16,21 +16,30 @@ struct MoviesListUIView: View {
     @State var currentPage: Int = 1
     var body: some View {
         NavigationView {
-            List {
-                ForEach(moviesViewModel.moviesList ?? [], id: \.id) { movie in
-                    NavigationLink(destination: MovieDetailsUIView.configureDetailView(id: movie.id ?? 0)) {
-                        MovieListRowUIView(movie: movie)
-                    }
-                    .listRowSeparator(.hidden)
+            VStack{
+                HStack{
+                    Spacer()
+                    MoviesSortingUIButton(title: "Popular", completion: FetchPopularMovies)
+                    Spacer()
+                    MoviesSortingUIButton(title: "Top Rated", completion: FetchPopularMovies)
+                    Spacer()
                 }
-                ListPaginationRowView(state: interactor?.state ?? .idle, loadMore: fetchNextPage)
+                List {
+                    ForEach(moviesViewModel.moviesList ?? [], id: \.id) { movie in
+                        NavigationLink(destination: MovieDetailsUIView.configureDetailView(id: movie.id ?? 0)) {
+                            MovieListRowUIView(movie: movie)
+                        }
+                        .listRowSeparator(.hidden)
+                    }
+                    ListPaginationRowView(state: interactor?.state ?? .idle, loadMore: fetchNextPage)
+                }
+                .foregroundColor(.clear)
+                .listStyle(.plain)
+                .scrollIndicators(.hidden)
+                .navigationTitle("Now Playing")
             }
-            .foregroundColor(.clear)
-            .listStyle(.plain)
-            .scrollIndicators(.hidden)
-            .navigationTitle("Now Playing")
-        }
-        .colorScheme(.dark)
+            
+        }        .colorScheme(.dark)
         .accentColor(.white)
     }
 }
@@ -50,5 +59,7 @@ extension MoviesListUIView: MoviesDisplayLogic {
         fetchMoviesList(page: currentPage)
         currentPage += 1
     }
+    
+    func FetchPopularMovies() {}
 }
 
