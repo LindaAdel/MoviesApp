@@ -1,0 +1,36 @@
+//
+//  MoviesRouter.swift
+//  MoviesApp
+//
+//  Created by Linda adel on 04/01/2024.
+//
+
+import Foundation
+import Alamofire
+
+enum MoviesRouter: BaseRouter {
+    case getMoviesList(page:Int)
+    
+    var method: HTTPMethod {
+        switch self {
+        case .getMoviesList:
+            return .get
+        }
+        
+    }
+    var authorized: Bool {
+        switch self {
+        default:
+            return true
+        }
+    }
+    var path: String {
+        switch self {
+        case .getMoviesList(let page):
+            return "\(NetworkConstants.path.playedMovies)?language=en-US&page=\(page)"
+        }
+    }
+    
+    
+    
+}
