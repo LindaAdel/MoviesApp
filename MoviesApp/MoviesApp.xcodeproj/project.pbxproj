@@ -18,7 +18,7 @@
 		477E606D2B46DACC00EFF6D4 /* MoviesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E606C2B46DACC00EFF6D4 /* MoviesListModel.swift */; };
 		477E606F2B46DADB00EFF6D4 /* MoviesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E606E2B46DADA00EFF6D4 /* MoviesListInteractor.swift */; };
 		477E60712B46DAF800EFF6D4 /* MoviesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E60702B46DAF800EFF6D4 /* MoviesListPresenter.swift */; };
-		477E60762B46DC9B00EFF6D4 /* MoviesListUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E60752B46DC9B00EFF6D4 /* MoviesListUIView.swift */; };
+		477E60762B46DC9B00EFF6D4 /* MoviesUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E60752B46DC9B00EFF6D4 /* MoviesUIView.swift */; };
 		477E60792B46E09800EFF6D4 /* BackgroundUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E60782B46E09800EFF6D4 /* BackgroundUIView.swift */; };
 		477E607B2B46E0C400EFF6D4 /* PosterUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E607A2B46E0C400EFF6D4 /* PosterUIView.swift */; };
 		477E607D2B46E57200EFF6D4 /* MoviesListInteractorAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E607C2B46E57200EFF6D4 /* MoviesListInteractorAssembler.swift */; };
@@ -46,6 +46,7 @@
 		477E60B62B48811D00EFF6D4 /* MovieDetailsCenterUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E60B52B48811D00EFF6D4 /* MovieDetailsCenterUIView.swift */; };
 		477E60B82B48822900EFF6D4 /* MovieDetailsFooterUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E60B72B48822900EFF6D4 /* MovieDetailsFooterUIView.swift */; };
 		477E60BA2B488E7F00EFF6D4 /* MoviesSortingUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E60B92B488E7F00EFF6D4 /* MoviesSortingUIButton.swift */; };
+		477E60BC2B496B2400EFF6D4 /* MoviesListUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E60BB2B496B2400EFF6D4 /* MoviesListUIView.swift */; };
 		47A26F682B45B611005EB747 /* MoviesAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A26F672B45B611005EB747 /* MoviesAppApp.swift */; };
 		47A26F6C2B45B61B005EB747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47A26F6B2B45B61B005EB747 /* Assets.xcassets */; };
 		47A26F6F2B45B61B005EB747 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47A26F6E2B45B61B005EB747 /* Preview Assets.xcassets */; };
@@ -95,7 +96,7 @@
 		477E606C2B46DACC00EFF6D4 /* MoviesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListModel.swift; sourceTree = "<group>"; };
 		477E606E2B46DADA00EFF6D4 /* MoviesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListInteractor.swift; sourceTree = "<group>"; };
 		477E60702B46DAF800EFF6D4 /* MoviesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListPresenter.swift; sourceTree = "<group>"; };
-		477E60752B46DC9B00EFF6D4 /* MoviesListUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListUIView.swift; sourceTree = "<group>"; };
+		477E60752B46DC9B00EFF6D4 /* MoviesUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesUIView.swift; sourceTree = "<group>"; };
 		477E60782B46E09800EFF6D4 /* BackgroundUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundUIView.swift; sourceTree = "<group>"; };
 		477E607A2B46E0C400EFF6D4 /* PosterUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterUIView.swift; sourceTree = "<group>"; };
 		477E607C2B46E57200EFF6D4 /* MoviesListInteractorAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListInteractorAssembler.swift; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 		477E60B52B48811D00EFF6D4 /* MovieDetailsCenterUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsCenterUIView.swift; sourceTree = "<group>"; };
 		477E60B72B48822900EFF6D4 /* MovieDetailsFooterUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsFooterUIView.swift; sourceTree = "<group>"; };
 		477E60B92B488E7F00EFF6D4 /* MoviesSortingUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSortingUIButton.swift; sourceTree = "<group>"; };
+		477E60BB2B496B2400EFF6D4 /* MoviesListUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListUIView.swift; sourceTree = "<group>"; };
 		47A26F642B45B611005EB747 /* MoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A26F672B45B611005EB747 /* MoviesAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAppApp.swift; sourceTree = "<group>"; };
 		47A26F6B2B45B61B005EB747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -215,7 +217,7 @@
 				477E606C2B46DACC00EFF6D4 /* MoviesListModel.swift */,
 				477E60702B46DAF800EFF6D4 /* MoviesListPresenter.swift */,
 				477E606E2B46DADA00EFF6D4 /* MoviesListInteractor.swift */,
-				477E60752B46DC9B00EFF6D4 /* MoviesListUIView.swift */,
+				477E60752B46DC9B00EFF6D4 /* MoviesUIView.swift */,
 			);
 			path = MoviesList;
 			sourceTree = "<group>";
@@ -234,6 +236,7 @@
 				477E60802B476B2200EFF6D4 /* ListPaginationRowView.swift */,
 				477E60842B4824E100EFF6D4 /* MovieListRowUIView.swift */,
 				477E60B92B488E7F00EFF6D4 /* MoviesSortingUIButton.swift */,
+				477E60BB2B496B2400EFF6D4 /* MoviesListUIView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -751,7 +754,7 @@
 				477E60952B48359700EFF6D4 /* MovieDetailsPresenter.swift in Sources */,
 				477E60B82B48822900EFF6D4 /* MovieDetailsFooterUIView.swift in Sources */,
 				477E605A2B46C52E00EFF6D4 /* NetworkConstants.swift in Sources */,
-				477E60762B46DC9B00EFF6D4 /* MoviesListUIView.swift in Sources */,
+				477E60762B46DC9B00EFF6D4 /* MoviesUIView.swift in Sources */,
 				477E60632B46C90600EFF6D4 /* MoviesResponse.swift in Sources */,
 				477E606A2B46D37000EFF6D4 /* MoviesResultResponse.swift in Sources */,
 				477E608A2B4828CB00EFF6D4 /* MovieDetailsRepository.swift in Sources */,
@@ -783,6 +786,7 @@
 				47A26FAC2B45D1D6005EB747 /* APIError.swift in Sources */,
 				477E60832B476B8800EFF6D4 /* PaginationState.swift in Sources */,
 				477E60A42B48394600EFF6D4 /* ProductionCompanies.swift in Sources */,
+				477E60BC2B496B2400EFF6D4 /* MoviesListUIView.swift in Sources */,
 				477E60AE2B4844E100EFF6D4 /* MovieDetailsDataStore.swift in Sources */,
 				477E605F2B46C83800EFF6D4 /* MoviesRouter.swift in Sources */,
 				477E60662B46D0CC00EFF6D4 /* NetworkManager.swift in Sources */,

@@ -11,3 +11,9 @@ enum PaginationState: Comparable{
     case idle
     case loading
 }
+
+enum MoviesState: Comparable{
+    case nowPlaying
+    case popular
+    case topRated
+}

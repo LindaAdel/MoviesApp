@@ -22,5 +22,6 @@ struct MoviesSortingUIButton: View {
         }).background(Color.indigo)
             .foregroundColor(Color.white)
             .cornerRadius(15)
+            
     }
 }

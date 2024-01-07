@@ -11,6 +11,7 @@ enum MoviesListModel {
     enum Fetch {
         struct Request {
             var page: Int = 1
+            var filterOption: MoviesState = .nowPlaying
         }
         struct Response {
             var moviesListResponse: MoviesResponse

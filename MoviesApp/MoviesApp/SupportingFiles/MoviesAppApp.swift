@@ -17,7 +17,7 @@ struct MoviesAppApp: App {
 }
 
 func configureMainView() -> some View {
-    var view = MoviesListUIView(moviesViewModel: MoviesListModel.Fetch.ViewModel())
+    var view = MoviesUIView(moviesViewModel: MoviesListModel.Fetch.ViewModel())
     MoviesListInteractorAssembler.shareInstance.assemble()
   let interactor = MoviesInteractor()
   let presenter = MoviesPresenter()
