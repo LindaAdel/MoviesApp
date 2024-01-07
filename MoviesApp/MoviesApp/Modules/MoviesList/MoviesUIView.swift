@@ -33,44 +33,33 @@ struct MoviesUIView: View {
         .colorScheme(.dark)
         .accentColor(.white)
     }
-}
-extension MoviesUIView: MoviesDisplayLogic {
     
-    func displayMoviesList(viewModel: MoviesListModel.Fetch.ViewModel) {
-        DispatchQueue.main.async {
-            self.moviesViewModel.moviesList = viewModel.moviesList
+    
+    func fetchMovies(_ page: Int ,_ filterOption: MoviesState) {
+        let request = MoviesListModel.Fetch.Request(page: page , filterOption: filterOption)
+        switch filterOption {
+        case.nowPlaying:
+            interactor?.loadMoviesList(request:request)
+        case .popular:
+            interactor?.loadPopularMoviesList(request:request)
+        case .topRated:
+            interactor?.loadTopRatedMoviesList(request:request)
         }
+        
     }
-    
-    
-    func fetchMoviesList(page: Int) {
-        let request = MoviesListModel.Fetch.Request(page: page , filterOption: .nowPlaying)
-        interactor?.loadMoviesList(request:request)
-    }
-    
-    func FetchPopularMoviesList(page: Int) {
-        let request = MoviesListModel.Fetch.Request(page: page, filterOption: .popular)
-        interactor?.loadPopularMoviesList(request:request)
-    }
-    
-    func FetchTopRatedMoviesList(page: Int) {
-        let request = MoviesListModel.Fetch.Request(page: page , filterOption: .topRated)
-        interactor?.loadTopRatedMoviesList(request:request)
-    }
-    
+
     func fetchNextPage(){
         switch movieState {
         case .nowPlaying:
-            fetchMoviesList(page: currentPage)
+            fetchMovies(currentPage, .nowPlaying)
             currentPage += 1
             
         case .popular:
             currentPage += 1
-            FetchPopularMoviesList(page: currentPage)
-           
+            fetchMovies(currentPage, .popular)
         case .topRated:
             currentPage += 1
-            FetchTopRatedMoviesList(page: currentPage)
+            fetchMovies(currentPage, .topRated)
            
         }
        
@@ -79,13 +68,21 @@ extension MoviesUIView: MoviesDisplayLogic {
     func FetchPopularMovies() {
         movieState = .popular
         currentPage = 1
-        FetchPopularMoviesList(page: currentPage)
+        fetchMovies(currentPage, .popular)
     }
     
     func FetchTopRatedMovies() {
         movieState = .topRated
         currentPage = 1
-        FetchTopRatedMoviesList(page: currentPage)
+        fetchMovies(currentPage, .topRated)
+    }
+}
+extension MoviesUIView: MoviesDisplayLogic {
+    
+    func displayMoviesList(viewModel: MoviesListModel.Fetch.ViewModel) {
+        DispatchQueue.main.async {
+            self.moviesViewModel.moviesList = viewModel.moviesList
+        }
     }
 }
 
