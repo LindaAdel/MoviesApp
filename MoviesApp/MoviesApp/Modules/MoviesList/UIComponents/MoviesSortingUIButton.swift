@@ -17,7 +17,7 @@ struct MoviesSortingUIButton: View {
             Text(title)
                 .bold()
                 .padding()
-                .frame(width: 150, height: 50, alignment: .center)
+                .frame(width: 120, height: 50, alignment: .center)
             
         }).background(Color.indigo)
             .foregroundColor(Color.white)

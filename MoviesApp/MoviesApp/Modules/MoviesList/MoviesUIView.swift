@@ -24,6 +24,8 @@ struct MoviesUIView: View {
                     Spacer()
                     MoviesSortingUIButton(title: "Top Rated", completion: FetchTopRatedMovies)
                     Spacer()
+                    MoviesSortingUIButton(title: "Clear", completion: FetchNowPlayingMovies)
+                    Spacer()
                 }
                 MoviesListUIView(loadMore: fetchNextPage, state: interactor?.state ?? .idle, moviesViewModel: moviesViewModel)
                     
@@ -75,6 +77,12 @@ struct MoviesUIView: View {
         movieState = .topRated
         currentPage = 1
         fetchMovies(currentPage, .topRated)
+    }
+    
+    func FetchNowPlayingMovies() {
+        movieState = .nowPlaying
+        currentPage = 1
+        fetchMovies(currentPage, .nowPlaying)
     }
 }
 extension MoviesUIView: MoviesDisplayLogic {
