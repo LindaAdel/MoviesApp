@@ -1,75 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kWA-zI-GGb">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22689"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movies List View Controller-->
-        <scene sceneID="QT5-Q6-VHk">
+        <!--List View Controller-->
+        <scene sceneID="81H-IA-GpW">
             <objects>
-                <tableViewController id="9dz-o6-jQM" customClass="MoviesListViewController" customModule="MoviesApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="o32-aR-we4">
+                <viewController storyboardIdentifier="ListViewController" id="kWA-zI-GGb" customClass="ListViewController" customModule="MoviesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9K0-dm-j4V">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="daG-Uo-7p9">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="285" id="tlg-9z-FpW" customClass="MoviesListCell" customModule="MoviesApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="285"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tlg-9z-FpW" id="Htl-8I-tLp">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="285"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddk-k7-I1e">
+                                                    <rect key="frame" x="271" y="132" width="102" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5HL-E2-EAs">
+                                                    <rect key="frame" x="0.0" y="20" width="240" height="245"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="240" id="0ag-ZW-rpd"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uN-Vd-g9I">
+                                                    <rect key="frame" x="298" y="32" width="75" height="39"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <action selector="favoriteButtonTapped:" destination="tlg-9z-FpW" eventType="touchUpInside" id="anl-yh-KAi"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="7uN-Vd-g9I" secondAttribute="trailing" constant="20" id="6KG-Zi-8eW"/>
+                                                <constraint firstItem="7uN-Vd-g9I" firstAttribute="top" secondItem="Htl-8I-tLp" secondAttribute="top" constant="32" id="Aew-P4-8Pi"/>
+                                                <constraint firstItem="5HL-E2-EAs" firstAttribute="top" secondItem="Htl-8I-tLp" secondAttribute="top" constant="20" id="Bz6-Dk-vqY"/>
+                                                <constraint firstItem="Ddk-k7-I1e" firstAttribute="centerY" secondItem="5HL-E2-EAs" secondAttribute="centerY" id="Fxv-kZ-o4F"/>
+                                                <constraint firstAttribute="bottom" secondItem="5HL-E2-EAs" secondAttribute="bottom" constant="20" id="Uk2-py-AP3"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ddk-k7-I1e" secondAttribute="trailing" constant="20" id="ZNq-td-yrc"/>
+                                                <constraint firstItem="5HL-E2-EAs" firstAttribute="leading" secondItem="Htl-8I-tLp" secondAttribute="leading" id="ZhR-83-ZUy"/>
+                                                <constraint firstItem="Ddk-k7-I1e" firstAttribute="leading" secondItem="5HL-E2-EAs" secondAttribute="trailing" constant="31" id="wqe-DU-rtq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="favoriteButton" destination="7uN-Vd-g9I" id="PFA-P8-VNc"/>
+                                            <outlet property="moviePoster" destination="5HL-E2-EAs" id="UVO-Iw-Xvu"/>
+                                            <outlet property="movieTitle" destination="Ddk-k7-I1e" id="mpC-kc-NS4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cWU-f0-5U9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="213" id="fX7-Y6-pPl">
-                                <rect key="frame" x="0.0" y="50" width="393" height="213"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="moviesCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fX7-Y6-pPl" id="cL7-f1-fQc" customClass="MoviesListCell" customModule="MoviesApp" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="213"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MKX-Ss-9eO">
-                                            <rect key="frame" x="61" y="69" width="271" height="124"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1c-C4-IDw">
-                                            <rect key="frame" x="20" y="20" width="42" height="29"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4e-Wh-wep">
-                                            <rect key="frame" x="292" y="20" width="81" height="39"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="favorite"/>
-                                            <connections>
-                                                <action selector="favoriteButtonTapped:" destination="cL7-f1-fQc" eventType="touchUpInside" id="K7L-cc-LTQ"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="H1c-C4-IDw" firstAttribute="top" secondItem="cL7-f1-fQc" secondAttribute="top" constant="20" id="6wQ-DG-fEI"/>
-                                        <constraint firstItem="MKX-Ss-9eO" firstAttribute="leading" secondItem="cL7-f1-fQc" secondAttribute="leadingMargin" constant="41" id="9h5-BL-2qh"/>
-                                        <constraint firstItem="H1c-C4-IDw" firstAttribute="leading" secondItem="cL7-f1-fQc" secondAttribute="leading" constant="20" id="9uJ-gb-5fU"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="MKX-Ss-9eO" secondAttribute="bottom" constant="8" id="Roe-sP-uoe"/>
-                                        <constraint firstItem="MKX-Ss-9eO" firstAttribute="top" secondItem="v4e-Wh-wep" secondAttribute="bottom" constant="10" id="Tkh-F3-d4K"/>
-                                        <constraint firstItem="MKX-Ss-9eO" firstAttribute="top" secondItem="H1c-C4-IDw" secondAttribute="bottom" constant="20" id="U9f-9V-hA7"/>
-                                        <constraint firstItem="MKX-Ss-9eO" firstAttribute="centerX" secondItem="cL7-f1-fQc" secondAttribute="centerX" id="hsx-ox-rsy"/>
-                                        <constraint firstItem="v4e-Wh-wep" firstAttribute="top" secondItem="cL7-f1-fQc" secondAttribute="top" constant="20" id="j7k-0O-Ycu"/>
-                                        <constraint firstAttribute="trailing" secondItem="v4e-Wh-wep" secondAttribute="trailing" constant="20" id="nlG-NE-poC"/>
-                                    </constraints>
-                                    <connections>
-                                        <outlet property="favoriteButton" destination="v4e-Wh-wep" id="Huc-b1-cTl"/>
-                                        <outlet property="moviePoster" destination="MKX-Ss-9eO" id="oug-Dx-fbg"/>
-                                        <outlet property="movieTitle" destination="H1c-C4-IDw" id="ZB2-Vn-iKX"/>
-                                    </connections>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="9dz-o6-jQM" id="lHw-9B-jum"/>
-                            <outlet property="delegate" destination="9dz-o6-jQM" id="FtN-bP-LYg"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TXs-cx-auD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="daG-Uo-7p9" firstAttribute="top" secondItem="cWU-f0-5U9" secondAttribute="top" id="7M7-U6-FZI"/>
+                            <constraint firstItem="daG-Uo-7p9" firstAttribute="leading" secondItem="cWU-f0-5U9" secondAttribute="leading" id="gub-wY-VXF"/>
+                            <constraint firstItem="cWU-f0-5U9" firstAttribute="trailing" secondItem="daG-Uo-7p9" secondAttribute="trailing" id="r1l-Mm-LXs"/>
+                            <constraint firstItem="cWU-f0-5U9" firstAttribute="bottom" secondItem="daG-Uo-7p9" secondAttribute="bottom" id="uOF-EB-jvQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="moviesTableView" destination="daG-Uo-7p9" id="RFG-ss-7Da"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QnY-QB-hqL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="394.6564885496183" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1214.5038167938931" y="-11.267605633802818"/>
         </scene>
     </scenes>
     <resources>

@@ -13,10 +13,26 @@ class MoviesListCell: UITableViewCell {
     @IBOutlet weak var moviePoster: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    var isFavorite: Bool = false {
+        didSet {
+            favoriteButton.isSelected = isFavorite
+        }
+    }
+    
+    var didTapFavouriteButton: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .selected)
+        favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
         // Initialization code
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        isFavorite = false
+    }
+    
     func configure(with movie: MoviesResultResponse?) {
         movieTitle.text = movie?.title
         if let posterPath = movie?.poster_path {
@@ -30,13 +46,7 @@ class MoviesListCell: UITableViewCell {
            }
        }
     
-    override func prepareForReuse() {
-            super.prepareForReuse()
-            // Cancel any ongoing image download
-        moviePoster.sd_cancelCurrentImageLoad()
-        moviePoster.image = nil
-        movieTitle.text = nil
-        }
+   
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -44,6 +54,8 @@ class MoviesListCell: UITableViewCell {
     }
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
         print("Button tapped!")
-        // Add your logic here
+        isFavorite.toggle()
+        favoriteButton.isSelected = isFavorite
+        didTapFavouriteButton?()
     }
 }
